@@ -1,0 +1,10 @@
+<div class="contents row">
+  <% @tunes.each do |tune| %>
+    <div class="content_post" style="background-image: url(<%= tune.image %>);">
+      <p><%= tune.text %></p>
+      <span class="name">
+        <%= tune.name %>
+      </span>
+    </div>
+  <% end %>
+</div>
