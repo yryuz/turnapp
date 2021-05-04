@@ -1,0 +1,10 @@
+<div class="contents row">
+  <% @tunes.each do |tune| %>
+    <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached?  %>
+      <p><%= tune.text %></p>
+      <span class="name">
+        <%= tune.name %>
+      </span>
+    </div>
+  <% end %>
+</div>
