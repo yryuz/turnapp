@@ -9,7 +9,7 @@ class Genre < ActiveHash::Base
     { id: 7, name: '2010年代' },
     { id: 8, name: 'J-POP' },
     { id: 9, name: 'R&B' },
-    { id: 10, name: 'アコーステック' }
+    { id: 10, name: 'アコーステック' },
     { id: 11, name: '歌謡曲' },
     { id: 12, name: 'キッズ/ファミリー' },
     { id: 13, name: 'クラシック' },
