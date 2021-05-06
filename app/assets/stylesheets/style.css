@@ -1057,3 +1057,28 @@ footer p {
 .search-form .search-btn {
   width: 10%;
 }
+
+.sell-btn-contents {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.back-btn {
+  font-size: 15px;
+}
+
+.indispensable {
+  font-size: 15px;
+  color: red;
+}
+
+.weight-bold-text {
+  font-weight:bold;
+}
+
+
+
+
