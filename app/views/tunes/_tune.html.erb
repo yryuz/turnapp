@@ -1,0 +1,15 @@
+<div class="content_post" style="background-image: url(<%= tune.image %>);">
+     <%= image_tag tune.image, class: "tune-img" %>
+       <div class="more">
+        <ul class="more_list">
+          <li>
+            <%= link_to '詳細', tune_path(tune.id), method: :get %>
+          </li>
+          <li>
+            <%= link_to '編集', edit_tune_path(tune.id), method: :get %>
+          </li>
+          <li>
+            <%= link_to '削除', tune_path(tune.id), method: :delete %>
+          </li>
+        </ul>
+      </div>

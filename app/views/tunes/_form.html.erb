@@ -1,0 +1,56 @@
+ <%= form_with model: tune,local: true do |f| %>
+      <%# イメージ画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        イメージ画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"tune-image" %>
+      </div>
+       <div id="image-list"></div>
+    </div>
+    <%# /イメーじ画像 %>
+     <%# 曲名と曲説明 %>
+    <div class="new-tunes">
+    <div class="weight-bold-text">
+        YouTubeのURL
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :url, class:"tunes-url", id:"tune-url", placeholder:"YouTubeのURL" %>
+
+      <div class="weight-bold-text">
+        曲名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :name, class:"tunes-text", id:"tune-name", placeholder:"曲名" %>
+      <div class="tunes-explain">
+        <div class="weight-bold-text">
+          お好きにどうぞ
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :text, class:"tunes-text", id:"tune-info", placeholder: "ご自由に感じたことを（必須 15文字まで)" ,maxlength:"15" %>
+        <div class="weight-bold-text">
+        アーティスト名
+        <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :artist,class:"tunes-artist", id:"tune-artist",placeholder: "アーティスト名" %>
+        <div class="weight-bold-text">
+          カテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:genre_id, Genre.all , :id, :name, {}, {class:"select-box", id:"tune-category"}) %>
+      </div>
+      </div>
+    <%# /曲名と曲説明 %>
+     <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "投稿する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+    <% end %>
