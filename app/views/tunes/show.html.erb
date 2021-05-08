@@ -1,0 +1,36 @@
+    <div class="contents row">
+
+     <div class="tune-explain-box">
+      <span><%=@tune.text %></span>
+    </div>
+
+    <div class="show-img">
+   <%= link_to image_tag(@tune.image) , @tune.url %>
+      <p>*画像をクリックするとYouTubeに移動します。</p>
+      </div>
+
+       
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">投稿者名</th>
+          <td class="detail-value">
+          <%= link_to @tune.user.nickname, user_path(@tune.user.id) %>
+          </td>
+        </tr>
+        <tr>
+          <th class="detail-item">曲名</th>
+          <td class="detail-value"><%= @tune.name%></td>
+        </tr>
+        <tr>
+          <th class="detail-item">アーティスト名</th>
+          <td class="detail-value"><%= @tune.artist %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">曲のジャンル</th>
+          <td class="detail-value"><%= @tune.genre.name %></td>
+        </tr>
+       </tbody>
+    </table>
+    
+    </div>

@@ -1,0 +1,19 @@
+<div class="content_post" >
+     <%= image_tag tune.image, class: "tune-img"  %>
+       <div class="more">
+        <span><%= image_tag 'arrow_top.png' %></span>
+        <ul class="more_list">
+          <li>
+            <%= link_to '詳細', tune_path(tune.id), method: :get %>
+          </li>
+           <% if user_signed_in? && current_user.id == tune.user_id %>
+          <li>
+            <%= link_to '編集', edit_tune_path(tune.id), method: :get %>
+          </li>
+          <li>
+            <%= link_to '削除', tune_path(tune.id), method: :delete %>
+          </li>
+          <%end%>
+        </ul>
+      </div>
+</div>

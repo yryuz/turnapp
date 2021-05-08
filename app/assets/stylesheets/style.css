@@ -859,8 +859,7 @@ div.contents.row .new_user {
 }
 
 div.contents.row div.content_post {
-  margin: 20px 0;
-  padding: 30px;
+  margin: 20px;
   position: relative;
   height: 400px;
   color: #fff;
@@ -1057,3 +1056,61 @@ footer p {
 .search-form .search-btn {
   width: 10%;
 }
+
+.sell-btn-contents {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.back-btn {
+  font-size: 15px;
+}
+
+.indispensable {
+  font-size: 15px;
+  color: red;
+}
+
+.weight-bold-text {
+  font-weight:bold;
+}
+
+.tune-img{
+  width: 660px;
+  height: 400px;
+ }
+
+
+.app-icon {
+  max-width: 28%;
+  height: auto;
+  width /***/:auto;
+}
+ 
+.show-img p{
+  text-align: right;
+}
+
+.error-message {
+  color:red;
+}
+
+.tune-explain-box {
+  margin:30px;
+  text-align: center;
+  font-size:20px;
+}
+
+.detail-table{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.detail-table tbody{
+  text-align: center;
+}
+
