@@ -1,4 +1,7 @@
  <%= form_with model: tune,local: true do |f| %>
+
+    <%= render 'error_messages', model: f.object %>
+
       <%# イメージ画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
