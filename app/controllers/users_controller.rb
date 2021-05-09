@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @nickname = @user.nickname
     @tunes = @user.tunes
+    @followers = @user.relationships
   end
 
   def edit
