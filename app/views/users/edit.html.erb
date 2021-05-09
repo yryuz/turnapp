@@ -1,0 +1,51 @@
+<div class="contents row">
+  <div class="container">
+    <h2>ユーザー情報編集</h2>
+    <%= form_with model: current_user, url: user_path, local: true do |f| %>
+      
+
+      <div class="weight-bold-text">
+        ニックネーム
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) 音スキ" %>
+
+       <div class="weight-bold-text">
+        年齢
+        <span class="indispensable">必須</span>
+      </div>
+    <%= f.number_field :year, class:"input-default", id:"year", placeholder:"例) 22" %>
+
+     <div class="weight-bold-text">
+        自己紹介
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :introduction, class:"input-default", id:"introduction", placeholder:"例) 大阪府在住の22歳 男です。好きな音楽のジャンルはロックです。 よろしくお願いします。" %>
+      
+
+      <div class="weight-bold-text">
+        メールアドレス
+        <span class="indispensable">必須</span>
+        <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
+      </div>
+        
+    
+
+      <div class="weight-bold-text">
+        パスワード
+        <span class="indispensable">必須</span>
+      <%= f.password_field :password, class:"input-default", id:"password", placeholder:"6文字以上の半角英数字" %>
+    </div>
+
+     <div class="weight-bold-text">
+        パスワード(確認用)
+        <span class="indispensable">必須</span>
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "ユーザー情報更新" %>
+      </div>
+    <% end %>
+  </div>
+</div>
