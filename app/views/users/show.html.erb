@@ -9,6 +9,15 @@
 <% end %>
 </div>
 
+<div class="follower">
+フォローしたユーザー
+<div class="follow-link">
+<% @followers.each do |follower| %>
+<%= link_to follower.follower.nickname, user_path(follower.follower.id) %>
+<%end%>
+</div>
+</div>
+
   <p><%= @nickname %>さんの投稿一覧</p>
   <% @tunes.each do |tune| %>
     <div class="content_post" style="background-image: url(<%= tune.image %>);">
@@ -32,4 +41,13 @@
       <span class="name"><%= tune.name + "/" + tune.artist %></span>
       </div>
   <% end %>
-</div>
+
+  <% if user_signed_in? && current_user != @user %>
+  <div id= "follow-button" >
+  <% if current_user.following?(@user) %>
+    <%= render "relationships/unfollow_button", user: @user %>
+  <%else%>
+    <%= render "relationships/follow_button", user: @user%>
+    <%end%>
+  </div>
+    <%end%>
