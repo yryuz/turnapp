@@ -34,6 +34,8 @@ before_action :move_to_index, only: [:edit, :update, :destroy]
   end
 
   def show
+    @comment = Comment.new
+    @comments = @tune.comments.includes(:user)
   end
 
   private
