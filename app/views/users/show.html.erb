@@ -1,10 +1,35 @@
 <div class="contents row">
+<div class="user-show">
+<%= @user.year%>歳の<%=@user.nickname%>さん
+<div class="user-introduction">
+<%=@user.introduction%>
+</div>
+<% if user_signed_in? && current_user.id == @user.id %>
+<%= link_to "編集する", edit_user_path(@user) %>
+<% end %>
+</div>
+
   <p><%= @nickname %>さんの投稿一覧</p>
   <% @tunes.each do |tune| %>
     <div class="content_post" style="background-image: url(<%= tune.image %>);">
     <%= image_tag tune.image, class: "tune-img" %>
+    <div class="more">
+        <span><%= image_tag 'arrow_top.png' %></span>
+        <ul class="more_list">
+          <li>
+            <%= link_to '詳細', tune_path(tune.id), method: :get %>
+          </li><% if user_signed_in? && current_user.id == tune.user_id %>
+          <li>
+            <%= link_to '編集', edit_tune_path(tune.id), method: :get %>
+          </li>
+          <li>
+            <%= link_to '削除', tune_path(tune.id), method: :delete %>
+          </li>
+          <%end%>
+          </ul>
+          </div>
       <p><%= tune.text %></p>
-      <span class="name"><%= tune.name %></span>
-    </div>
+      <span class="name"><%= tune.name + "/" + tune.artist %></span>
+      </div>
   <% end %>
 </div>
