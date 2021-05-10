@@ -6,7 +6,7 @@ class CreateTunes < ActiveRecord::Migration[6.0]
       t.string :artist, null: false
       t.integer :genre_id, null: false
       t.text :text, null: false
-      t.references :user, foreign_key: true
+      t.integer :user_id, foreign_key: true
       t.timestamps
     end
   end
