@@ -34,11 +34,13 @@ ActiveRecord::Schema.define(version: 2021_05_09_154104) do
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "tune_id"
-    t.text "text"
+    t.bigint "user_id", null: false
+    t.bigint "tune_id", null: false
+    t.text "text", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["tune_id"], name: "index_comments_on_tune_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -79,6 +81,9 @@ ActiveRecord::Schema.define(version: 2021_05_09_154104) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "comments", "tunes"
+  add_foreign_key "comments", "users"
+  add_foreign_key "relationships", "users"
   add_foreign_key "relationships", "users", column: "follower_id"
   add_foreign_key "tunes", "users"
 end
