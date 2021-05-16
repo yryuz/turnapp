@@ -19,7 +19,7 @@ https://turnapp-35205.herokuapp.com/
 メールアドレス test@test
 パスワード ttt000
 
-メールアドレス aaaaaa@aaa.aaa
+メールアドレス aaa@aaa
 パスワード aaa000
 
 ## 目指した課題解決
